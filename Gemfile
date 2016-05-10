@@ -8,7 +8,7 @@ gem 'rails', '4.2.5.1'
 gem 'pg'
 
 #adding ruby version
-gem 'ruby', '2.2.0'
+gem 'ruby'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
