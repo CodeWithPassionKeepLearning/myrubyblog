@@ -9,6 +9,7 @@ ActiveAdmin.register_page "Dashboard" do
 						link_to post.title,[:admin,post]
 						end
 						column :category, :sortable => :category
+						column "Author",:admin_user
 						column :created_at
 					end
 					strong(link_to "Show All Posts", :admin_posts)

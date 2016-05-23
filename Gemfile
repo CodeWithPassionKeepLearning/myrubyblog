@@ -19,6 +19,11 @@ gem 'ransack',github: 'activerecord-hackery/ransack'      # Require for ActiveAd
 gem 'formtastic',github: 'justinfrench/formtastic'           # Require for ActiveAdmin to work with Rails 4.1
 gem 'devise'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers', require: false
+end
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

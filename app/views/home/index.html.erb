@@ -1,3 +1,11 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<h3>-Meghal</h3>
+
+<% @posts.each do |post| %>
+	<div class="post">
+		<h2 class="title"><%= link_to post.title, post %></h2>
+		<div class="entry"><%= post.body %></div>
+		<div class="byline">
+							<p class="meta">May 01, 2012 Posted by : <%= post.admin_user.name %></p>
+							<p class="links"><%= link_to "Read more", post_path(:id => post.id) %></p>
+		</div>
+</div>
+<% end %>

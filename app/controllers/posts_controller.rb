@@ -1,18 +1,22 @@
 class PostsController < ApplicationController
 
 	def post_params
-      params.require(:post).permit(:title, :body, :category_id, :author_id)
+      params.require(:post).permit(:title, :body, :category_id, :admin_user_id)
 	  
     end
 	
 	def index
+		@search = Post.ransack(params[:q])
+		@posts = @search.result
 	
-		@posts = Post.all
+		# @posts = Post.all
 	end
 	
 	
 	def show
 		@post = Post.find(params[:id])
+		@user = AdminUser.all
+		@post_comment = PostComment.new(:post => @post)
 	
 	end
 	
